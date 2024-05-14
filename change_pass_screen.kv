@@ -1,5 +1,4 @@
 #: import Colors settings.colors.Colors
-#: import Texts settings.texts.Texts
 
 <Change_Pass_Screen>:
     name: "change_pass_screen"
@@ -15,7 +14,7 @@
         elevation: 10
 
     MDLabel:
-        text: Texts.text17
+        text: "Change Password"
         halign: "center"
         pos_hint: {"center_y":.69}
         font_style: "Subtitle2"
@@ -24,7 +23,7 @@
         text_color: Colors.black
 
     MDLabel:
-        text: Texts.text15
+        text: "Nhập Password mới để đổi mật khẩu"
         halign: "center"
         pos_hint: {"center_y":.58}
         font_style: "Subtitle2"
@@ -34,7 +33,7 @@
 
     MDTextField:
         id: password
-        hint_text: Texts.text16
+        hint_text: "Nhập Password mới"
         pos_hint: {"center_x": 0.5, "center_y": 0.48}
         size_hint_x: None
         width: dp(320)
@@ -46,7 +45,7 @@
 
     MDTextField:
         id: re_password
-        hint_text: Texts.text19
+        hint_text: "Lặp lại Password"
         pos_hint: {"center_x": 0.5, "center_y": 0.37}
         size_hint_x: None
         width: dp(320)
@@ -55,7 +54,7 @@
         password: True
     
     MDRaisedButton:
-        text: Texts.text17
+        text: "Change Password"
         pos_hint: {"center_x": 0.5, "center_y":0.24}
         size_hint_x: None
         width: dp(320)
