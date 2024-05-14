@@ -1,5 +1,4 @@
 #: import Colors settings.colors.Colors
-#: import Texts settings.texts.Texts
 
 <Forgot_Pass_Screen>:
     name: "forgot_pass_screen"
@@ -15,7 +14,7 @@
         elevation: 10
 
     MDLabel:
-        text: Texts.text18
+        text: "Enter Email and Phone"
         halign: "center"
         pos_hint: {"center_y":.69}
         font_style: "Subtitle2"
@@ -24,7 +23,7 @@
         text_color: Colors.black
 
     MDLabel:
-        text: Texts.text12
+        text: "Hãy nhập email, phone để chúng tôi gửi mã xác thực cho bạn"
         halign: "center"
         pos_hint: {"center_y":.58}
         font_style: "Subtitle2"
@@ -34,7 +33,7 @@
 
     MDTextField:
         id: email
-        hint_text: Texts.text13
+        hint_text: "Enter A Email"
         size_hint_x: None
         width: dp(320)
         color_mode: 'custom'
@@ -45,7 +44,7 @@
 
     MDTextField:
         id: phone
-        hint_text: Texts.text14
+        hint_text: "Enter Number Phone"
         size_hint_x: None
         width: dp(320)
         color_mode: 'custom'
