@@ -1,5 +1,4 @@
 #: import Colors settings.colors.Colors
-#: import Texts settings.texts.Texts
 
 <Verify_Change_Screen>:
     name: "verify_change_screen"
@@ -15,7 +14,7 @@
         elevation: 10
 
     MDLabel:
-        text: Texts.text8
+        text: "Email verification code"
         halign: "center"
         pos_hint: {"center_y":.69}
         font_style: "Subtitle2"
@@ -24,7 +23,7 @@
         text_color: Colors.black
 
     MDLabel:
-        text: Texts.text7
+        text: "Một mã xác thực đã gửi đến email của bạn, hãy nhập vào bên dưới"
         halign: "center"
         pos_hint: {"center_y":.58}
         font_style: "Subtitle2"
@@ -34,7 +33,7 @@
   
     MDTextField:
         id: verify_email
-        hint_text: Texts.text9
+        hint_text: "Enter email code"
         pos_hint: {"center_x": 0.5, "center_y": 0.48}
         size_hint_x: None
         width: dp(320)
