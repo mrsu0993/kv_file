@@ -1,5 +1,4 @@
 #: import Colors settings.colors.Colors
-#: import Texts settings.texts.Texts
 
 <Speak_Screen>:
     name: "speak_screen"
@@ -8,31 +7,48 @@
     padding: '5dp'
     spacing: '10dp'
 
+    FloatLayout:
+        pos_hint: {"center_x": .5, "center_y": .89}
+        size_hint: None, None
+        size: root.width * 0.8, "105dp"
+        canvas:
+            Color:
+                rgba: get_color_from_hex("2F406C")
+            RoundedRectangle:
+                pos: self.pos
+                size: self.size
+                radius: [25, 25, 25, 25]
+            Color:
+                rgba: Colors.do
+            Line:
+                width: 2
+                rounded_rectangle: (self.x, self.y, self.width, self.height, 25)
+
     MDLabel:
         id: total_word_count_label
-        text: Texts.text1
+        text: ""
         halign: "center"
-        pos_hint: {"center_y": .92}
+        pos_hint: {"center_y": .93}
         font_size: sp(30)
         size_hint_y: None
         theme_text_color: "Custom"
-        text_color: Colors.black
+        text_color: Colors.white
 
     MDLabel:
         id: word_count_label
-        text: Texts.text2
+        text: ""
         halign: "center"
-        pos_hint: {"center_y":.819}
+        pos_hint: {"center_y":.85}
         font_size: sp(26)
         size_hint_y: None
         theme_text_color: "Custom"
-        text_color: Colors.black
+        text_color: Colors.white
 
     MDLabel:
         id: current_file_label
-        text: Texts.text3
+        text: ""
         halign: "center"
-        pos_hint: {"center_y":.66}
+        pos_hint: {"center_y":.64}
         font_size: sp(120)
         size_hint_y: None
         theme_text_color: "Custom"
@@ -43,7 +59,7 @@
         adaptive_height: True
         height: dp(12)
         padding: dp(20), 0
-        pos_hint: {"center_y": 0.49}
+        pos_hint: {"center_y": 0.46}
         MDSlider:
             id: progress_slider
             min: 0
@@ -65,20 +81,22 @@
         icon: 'play'
         on_release: root.play_pause()
         md_bg_color: Colors.vang1
-        pos_hint: {"center_x": 0.5, "center_y": 0.4}
+        pos_hint: {"center_x": 0.5, "center_y": 0.38}
 
     MDRectangleFlatIconButton:
         id: name_audio
-        text: "Chọn file nói ở đây"
+        text: ""
         size_hint_x: None
         width: dp(100)
-        pos_hint: {'center_x': .5, 'center_y': .3}
-        on_release: root.show_confirmation_dialog()
+        pos_hint: {'center_x': .5, 'center_y': .28}
+        on_release: root.show_category()
+        # on_release: root.show_confirmation_dialog()
+        on_release: app.screen_manager.change_screen("apple_screen")
         theme_text_color: "Custom"
 
     MDLabel:
         id: index_word
-        text: Texts.text4
+        text: ""
         font_size: '16sp'
         halign: "center"
         font_size: '26sp'
@@ -95,18 +113,19 @@
 
         MDTextField:
             id: current_index_text
-            hint_text: Texts.text5
+            hint_text: ""
             pos_hint: {"center_x":0.5, "center_y":0.13}
             size_hint_x: .8
 
         MDRaisedButton:
-            text: "Copy Link"
+            id: copy_link
+            text: ""
             size_hint_x: .2
             on_release: root.copy_link()
 
     MDLabel:
         id: copyright_activatived
-        text: "@SuSpeak Copyright 2024"
+        text: ""
         markup: True
         halign: "center"
         pos_hint: {"center_y":0.05}
